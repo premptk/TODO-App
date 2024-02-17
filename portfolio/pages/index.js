@@ -1,8 +1,11 @@
-import React from 'react';
+import Navbar from './Component/Navbar';
+import Header from './Component/Header';
 
 export default function Hello() {
-
   return (
-    <div>Hello</div>
-  )
+    <div>
+      <Navbar />
+      <Header />
+    </div>
+  );
 }
