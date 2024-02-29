@@ -30,7 +30,7 @@ export default function Hello() {
       <div className={classes.backgroundImage}></div>
       <Navbar />
       <Header />
-      {/* <Content /> */}
+      <Content />
     </div>
   );
 }
