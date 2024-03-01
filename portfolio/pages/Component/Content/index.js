@@ -21,6 +21,7 @@ const useStyles = createUseStyles({
     width: '60%',
     display: 'flex',
     flexDirection: 'column',
+    gap: '30px'
   }
 });
 
@@ -33,6 +34,9 @@ const Content = () => {
         <Experience />
       </div>
       <div className={classes.secondPart}>
+        <Working />
+        <Working />
+        <Working />
         <Working />
       </div>
     </div>
