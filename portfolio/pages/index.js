@@ -1,13 +1,10 @@
 import Navbar from './Component/Navbar';
 import Header from './Component/Header';
 import Content from './Component/Content';
+import Projects from './Component/Projects';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  setDiv: {
-    position: 'relative', 
-    minHeight: '100vh',
-  },
   backgroundImage: {
     position: 'absolute',
     top: 0,
@@ -26,11 +23,12 @@ export default function Hello() {
   const classes = useStyles();
 
   return (
-    <div className={classes.setDiv}>
+    <>
       <div className={classes.backgroundImage}></div>
       <Navbar />
       <Header />
       <Content />
-    </div>
+      <Projects />
+    </>
   );
 }

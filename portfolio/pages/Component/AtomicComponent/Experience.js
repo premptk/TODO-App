@@ -4,6 +4,9 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
+    position: 'sticky',
+    top: '0px',
+    marginTop: '110px'
   },
   para1: {
     fontSize: '40px',
@@ -34,10 +37,10 @@ const Experience = () => {
           various computer science concepts and acquired practical experience
           through internships at prominent companies such as Samsung and Rupeek.
         </div>
-        <div className={classes.para3}>About</div>
         <div className={classes.para3}>Experience</div>
         <div className={classes.para3}>Project</div>
         <div className={classes.para3}>Publications</div>
+        <div className={classes.para3}>Contact Me</div>
       </div>
     </>
   );
