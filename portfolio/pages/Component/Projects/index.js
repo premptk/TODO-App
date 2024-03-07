@@ -1,9 +1,38 @@
-import React from 'react'
+import Card from '../AtomicComponent/ProjectCard';
 
+// Projects component
 const Projects = () => {
+  // Sample data for demonstration
+  const projectData = [
+    {
+      title: 'Project 1',
+      description: 'Description for Project 1',
+      imageUrl: 'https://via.placeholder.com/300',
+    },
+    {
+      title: 'Project 2',
+      description: 'Description for Project 2',
+      imageUrl: 'https://via.placeholder.com/300',
+    },
+    {
+      title: 'Project 3',
+      description: 'Description for Project 3',
+      imageUrl: 'https://via.placeholder.com/300',
+    },
+  ];
+
   return (
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ipsam quos laboriosam, doloremque, id impedit corporis dolore iste, veritatis consequatur tempore ex veniam! Quia rerum recusandae debitis facere eius sint porro, consequatur adipisci labore tempora temporibus eos omnis voluptates cupiditate enim. Animi ipsum magni recusandae amet nisi, hic minus eius ab impedit similique distinctio ipsa, praesentium voluptates accusantium reiciendis velit repellat et? Modi asperiores, tempora perferendis labore quidem, harum officiis dolores nam at vero quo soluta minus iste assumenda nisi obcaecati aliquam quisquam sunt temporibus ipsum! Quo, quisquam dignissimos?</div>
-  )
-}
+    <div className="projects">
+      {projectData.map((project, index) => (
+        <Card
+          key={index}
+          title={project.title}
+          description={project.description}
+          imageUrl={project.imageUrl}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default Projects;

@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
     flexDirection: 'row', 
     width: '90%',
     margin: '0 auto',
-    gap: '40px'
+    gap: '40px',
   },
   headerWrapper: {
     width: '40%',
@@ -101,6 +101,7 @@ const Content = () => {
   
 
   return (
+    <>
     <div className={classes.mainWrapper}>
       <div className={classes.headerWrapper}>
         <Experience />
@@ -111,6 +112,7 @@ const Content = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

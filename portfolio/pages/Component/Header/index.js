@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -7,7 +7,6 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   headerWrapper: {
     width: '90%',
@@ -23,19 +22,42 @@ const useStyles = createUseStyles({
     marginLeft: '60px',
     marginRight: '60px',
   },
+  para0: {
+    margin: '0px 0px 30px 4px',
+    color: 'cyan',
+    fontFamily: "'Lucida Console', 'Courier New', monospace",
+    fontSize: '16px',
+    fontWeight: 400
+  },
   para1: {
-    fontSize: '40px',
     marginBottom: '20px',
+    fontSize: 'clamp(40px, 8vw, 80px)',
+    color: '#ccd6f6',
+    lineHeight: 1.1,
+    fontWeight: 600,
   },
   para2: {
-    fontSize: '40px',
+    marginTop: '5px',
+    color: '#8892b0',
+    lineHeight: 0.9,
+    fontSize: 'clamp(40px, 8vw, 80px)',
+    fontWeight: 600,
     transition: 'opacity 0.5s, transform 0.5s',
-    color: 'cyan',
   },
   para3: {
-    fontSize: '16px',
-    opacity: 0.5,
+    color: '#8892b0',
+    fontFamily: "'Lucida Console', 'Courier New', monospace",
     marginTop: '20px',
+    lineHeight: 1.3,
+    width: '80%',
+    display: 'inline-block'
+  },
+  textPara: {
+    margin: '0',
+    borderRight: '5px solid',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    animation: '$typing 3s steps(18), $cursor 0.5s step-end infinite alternate'
   },
   exploreMoreButton: {
     padding: '30px 0px',
@@ -43,66 +65,41 @@ const useStyles = createUseStyles({
   buttonStyle: {
     backgroundColor: 'cyan',
     color: 'black',
-    padding: '4px 12px 4px 12px',
+    padding: '4px 12px',
     border: '1px solid transparent',
     fontSize: '1rem',
     lineHeight: 1.5,
     borderRadius: '0.25rem',
     fontWeight: '400',
   },
+  '@keyframes cursor': {
+    '50%': { borderColor: 'transparent' }
+  },
+  '@keyframes typing': {
+    '0%': { width: '0' },
+    '50%': { width: '100%' },
+    '100%': { width: '100%' }
+  }
 });
 
 const Header = () => {
   const classes = useStyles();
-  const [role, setRole] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setRole(!role);
-    }, 2000);
-
-    return () => clearTimeout();
-  }, [role]);
 
   return (
     <div className={classes.mainWrapper}>
       <div className={classes.headerWrapper}>
         <div className={classes.subHeaderWrapper}>
-          <div className={classes.para1}>Prem Ranjan Pattanayak</div>
-          <div
-            className={classes.para2}
-          >
-            {role ? 'Full Stack Developer' : 'Data Science'}
+          <div className={classes.para0}>Hi, my name is</div>
+          <div className={classes.para1}>Prem Ranjan Pattanayak.</div>
+          <div className={classes.para2}>
+            <p className={classes.textPara}>I build Things for Web.</p>
           </div>
-          <div className={classes.para3}>
-            {' '}
-            B.Tech CSE (Computer Science and Engineering) grad with a strong
-            passion for software development. I have gained a solid foundation
-            in various computer science concepts and acquired practical
-            experience through internships at prominent companies such as
-            Samsung and Rupeek.
-          </div>
-          <div className={classes.para3}>
-            {' '}
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-            reiciendis dolor at ipsum labore consectetur ab! Hic saepe omnis
-            tenetur. Earum quibusdam in eligendi, ad quam dolores dolore
-            incidunt error. Velit consequatur cum asperiores soluta voluptatem
-            ipsum maiores tempore. Labore id quidem nisi quod!
-          </div>
+          <p className={classes.para3}>
+            I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at
+          </p>
           <div className={classes.exploreMoreButton}>
             <button className={classes.buttonStyle} type='submit'>Explore More</button>
           </div>
-        </div>
-        <div className={classes.frameWrapper}>
-          <iframe
-            src='../../../public/images/giphy.gif'
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            title="GIF"
-            allowFullScreen
-          ></iframe>
         </div>
       </div>
     </div>

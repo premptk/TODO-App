@@ -5,16 +5,8 @@ import Projects from './Component/Projects';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url('/images/background-dark.jpg')`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    filter: 'blur(8px)',
+  overallBackground: {
+    backgroundColor: '#0f1d3a',
     zIndex: -1, 
   },
 });
@@ -24,11 +16,12 @@ export default function Hello() {
 
   return (
     <>
-      <div className={classes.backgroundImage}></div>
-      <Navbar />
-      <Header />
-      <Content />
-      <Projects />
+      <div className={classes.overallBackground}>
+        <Navbar />
+        <Header />
+        <Content />
+        {/* <Projects /> */}
+      </div>
     </>
   );
 }
