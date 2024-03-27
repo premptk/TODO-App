@@ -1,7 +1,7 @@
 import Navbar from './Component/Navbar';
 import Header from './Component/Header';
 import Content from './Component/Content';
-import Projects from './Component/Projects';
+import AboutMe from './Component/AboutMe';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -19,8 +19,8 @@ export default function Hello() {
       <div className={classes.overallBackground}>
         <Navbar />
         <Header />
+        {/* <AboutMe/> */}
         <Content />
-        {/* <Projects /> */}
       </div>
     </>
   );
